@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Server Access</title>
+</head>
+<body>
+    <h1>Enter desired characteristics: </h1>
+    <form action="/data" method="get">
+        <label for="author">Enter author: </label>
+        <input
+          id="author"
+          type="text"
+          name="author"
+          value="Mark Twain" 
+          />
+
+        <label for="quote">Enter quote (exact or by keyword): </label>
+        <input
+          id="quote"
+          type="text"
+          name="quote"
+          value="Do or do not, there is no try" />
+
+        <label for="tag">Enter tag (genre) associated with a quote: </label>
+        <input
+          id="tag"
+          type="text"
+          name="tag"
+          value="happiness" />
+
+          <input type="submit" value="Search" />
+        </form>
+
+        <button>Test buton</button>
+      <script>
+
+        const author = document.getElementById('author').value;
+        const quote = document.getElementById('quote').value;
+        const tag = document.getElementById('tag').value;
+
+        fetch(`/data?author=${author}&quote=${quote}&tag=${tag}`);
+
+
+      </script>
+</body>
+</html>
