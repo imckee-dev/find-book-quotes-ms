@@ -22,9 +22,6 @@ app.get('/', (req, res) => {
 
 });
 
-app.listen(PORT, () => {
-    console.log(`Server is listening at http://localhost:${PORT}`);
-});
 
 //rest api integration:
 
@@ -63,6 +60,16 @@ app.get('/data', (req, res) => {
 
     //res.json({ message: 'Returning list of quotes' });
 });
+
+
+
+module.exports = app
+
+if (require.main === module) { //if we;re running node directly
+    app.listen(PORT, () => {
+        console.log(`Server's listening at http://localhost:${PORT}!`);
+    });
+}
 
 
 
