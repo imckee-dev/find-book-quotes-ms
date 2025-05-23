@@ -15,11 +15,43 @@ Steps to install/run server:
 4. `npx jest` to run Jest/Supertest tests.
 
 #### How to REQUEST:
-- This uses Express.js. 
-- After running `node app.js`, on `/` (home page), enter an author, any text (exact match or a keyword) to look for in a quote, AND/OR a tag (functionally a genre) associated with the quote.
+- After running `node app.js`, and the server responds,
+- On `/` (home page), enter an author, any text (exact match or a keyword) to look for in a quote, AND/OR a tag (functionally a genre) associated with the quote.
+    - Example: 
+    ```
+            .query({
+        author: 'twain',
+        quote: '',
+        tag: 'humor'
+      })
+    ```
+    (This is what the `/data` will receive in code. In other words, the programmatic call behind your HTML form entry with your desired characteristics.)
 
 #### How to RECEIVE:
-- Hit submit on `/` (home). Will return a JSON array
+- Hit submit from said form on `/` (home). Will return a JSON array.
+
+- Previous example query's output:
+
+```
+[
+  {
+    "id": 411,
+    "text": "“Substitute 'damn' every time you're inclined to write 'very;' your editor will delete it and the writing will be just as it should be.”",
+    "author": "Mark Twain",
+    "book": "",
+    "tags": "humor, writing",
+    "likes": 9618
+  },
+  {
+    "id": 447,
+    "text": "“Reader, suppose you were an idiot. And suppose you were a member of Congress. But I repeat myself.”",
+    "author": "Mark Twain",
+    "book": "",
+    "tags": "humor, politics",
+    "likes": 9081
+  },
+  # etc...
+```
 
 ##### User stories fulfilled:
 1. Given I’m in the request book quotes menu, when I provide a specific author, then the ones from the author I want should be retrieved by default, and I’m able to narrow them down by date or other characteristics.
