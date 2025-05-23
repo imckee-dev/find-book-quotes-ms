@@ -55,7 +55,7 @@ Steps to install/run server:
 
 #### UML Diagram
 
-![uml diagram](./uml_diagram.jpg)
+![uml diagram](https://github.com/imckee-dev/find-book-quotes-ms/blob/0dff538615c2b88029aaddcfd3011a346443c5e5/uml_diagram.jpg)
 
 ##### User stories fulfilled:
 1. Given I’m in the request book quotes menu, when I provide a specific author, then the ones from the author I want should be retrieved by default, and I’m able to narrow them down by date or other characteristics.
