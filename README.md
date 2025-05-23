@@ -14,10 +14,6 @@ Steps to install/run server:
 3. `node app.js` from root to start server.
 4. `npx jest` to run Jest/Supertest tests.
 
-**Thing of note**: I ran the steps on my local Mac machine on its terminal. Notably, not the flip servers. `node app.js` may or may not connect on the flip servers, but to be safe, for testing try on your local machine.
-
-The code here is pretty elementary Node/Express, but you're welcome to check for security purposes before running.
-
 #### How to REQUEST:
 - After running `node app.js`, and the server responds,
 - On `/` (home page), enter an author, any text (exact match or a keyword) to look for in a quote, AND/OR a tag (functionally a genre) associated with the quote.
@@ -56,6 +52,10 @@ The code here is pretty elementary Node/Express, but you're welcome to check for
   },
   # etc...
 ```
+
+#### UML Diagram
+
+![uml diagram](./uml_diagram.jpg)
 
 ##### User stories fulfilled:
 1. Given I’m in the request book quotes menu, when I provide a specific author, then the ones from the author I want should be retrieved by default, and I’m able to narrow them down by date or other characteristics.
